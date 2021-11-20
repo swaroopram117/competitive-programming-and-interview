@@ -1,0 +1,26 @@
+For m = n = 1, output: 1
+For m = n = 2, output: 4 + 1 [ 4 of size 1×1 + 1 of size 2×2 ]
+For m = n = 3, output: 9 + 4 + 1 [ 9 of size 1×1 + 4 of size 2×2 + 1 of size 3×3 ]
+For m = n = 4, output 16 + 9 + 4 + 1 [ 16 of size 1×1 + 9 of size 2×2 + 4 of size 3×3 + 1 of size 4×4 ]
+In general, it seems to be n^2 + (n-1)^2 + … 1 = n(n+1)(2n+1)/6
+
+when m may not be equal to n: 
+Total number of squares = m x (m+1) x (2m+1)/6 + (n-m) x m x (m+1)/2 
+
+code
+#include <bits/stdc++.h>
+using namespace std;
+
+int count_numbersofsquares(int m,int n)
+{
+  if (n<m)
+  swap(n,m);
+  return ((m*(m+1)*(2*m+1)/6)+((n-m)*m*(m+1)/2));
+}
+int main() 
+{
+    int m,n;
+    cin>>n>>m;
+    cout<<count_numbersofsquares(m,n);
+    return 0;
+}
