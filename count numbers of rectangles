@@ -1,0 +1,17 @@
+M(M+1)(N)(N+1)/4 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int count_rectangleingrid(int n, int m){
+  if (n<m)
+  swap(n,m);
+  return(n*(n+1)*m*(m+1)/4);
+}
+int main() 
+{
+    int m,n;
+    cin>>n>>m;
+    cout<<count_rectangleingrid(n,m);
+    return 0;
+}
