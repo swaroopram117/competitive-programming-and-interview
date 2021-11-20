@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+int xor_ops(int N, int M, int K, int ar[]){
+  
+  
+  if(M<0 or M>=N)
+    
+    return -1;
+    
+  if(K<0 or K>=M-N)
+    return -1;
+  vector <int> temp;
+  for(int i=0;i<=M; i++){
+    
+    for(int j=0; j<=N; j++){
+      int value= ar[j]^ar[j+1];
+       temp.push_back(value);
+       ar[j]=temp[j];
+       
+       
+    }
+  }
+  int ans =ar[K];
+  return ans;
+}
+
+
+int main() 
+{
+  int N,M,K;
+  
+  cin>>N,M,K;
+  int ar[N];
+  cout<<"\n";
+  for(int i=0; i<=N; i++){
+    cin>>ar[i];
+  }
+  cout<< xor_ops( N,M,K,ar);
+    
+    return 0;
+}
