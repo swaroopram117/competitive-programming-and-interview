@@ -1,0 +1,15 @@
+using sum of natural number
+python code:  return sum(range(n+1)) - sum(array)
+
+c++: 
+int MissingNumber(vector<int>& array, int n) {
+        
+        // Your code goes here
+        int sum1=n*(n+1)/2; int sum2=0;
+        for(int i=0; i<n;i++)
+        {
+            sum2=sum2+array[i];
+            
+        }
+       return (sum1-sum2) ;
+    }
