@@ -1,0 +1,33 @@
+Let f(n)f(n) give the number of trailing zeros in the base ten representation of n!n!. Then,
+
+
+
+
+
+
+class Solution
+{
+public:
+    int trailingZeroes(int N)
+    {
+        // Write Your Code here
+        int result=0;
+        if(N==5) return 1;
+        for(int i=5; i<=N; i=i*5){
+            result=result+(N/i);
+            
+        }
+        return result;
+    }
+};
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int N;
+        cin>>N;
+        solution s;
+        cout<<s.trailingZeroes(N);
+    }
+    return 0;
+}
